@@ -7,7 +7,7 @@ USE `digital_signature` ;
 CREATE TABLE IF NOT EXISTS `digital_signature`.`user_details` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `full_name` VARCHAR(100) NOT NULL,
-  `public_key` VARCHAR(392) NOT NULL,
+  `public_key` VARCHAR(455) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `public_key_UNIQUE` (`public_key` ASC),
