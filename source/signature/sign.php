@@ -1,6 +1,5 @@
 <?php
-    require('../keys/key_pair.php');
- 
+require('../keys/key_pair.php');
     $data = $_POST['to_sign'];
     $private_key_from_input = $_POST['private_key'];
 
@@ -21,14 +20,15 @@
     //certificate to string
     openssl_x509_export($certificate, $certificate_string);
     */
-    
+
     openssl_private_encrypt($data, $encrypted_data, $private_key_from_input);
-    
+
+    //echo $private_key_from_input . "<br><br><br>" . $private_key;
     //translate to hexadecimal, so the crypt make sense and can be a part of output string
     $encrypted_data_hex = bin2hex($encrypted_data);
 
     date_default_timezone_set('Europe/Prague');
 
-    echo $data."###<br>-------------------------<br> ###signature->###".$encrypted_data_hex."<br>### ".date("Y-M-D h:i:s");
-    
+    echo $data . "|" . bin2hex($encrypted_data) . "|" . date("Y-M-D h:i:s");
+
 ?>
