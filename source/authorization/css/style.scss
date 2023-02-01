@@ -1,0 +1,63 @@
+html{
+    margin: 0 auto;
+    z-index: 1;
+
+
+    body{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+
+        header{
+            position: fixed;
+            height: 3em;
+            width: 100%;
+            margin-top: 0px;
+            background-color: burlywood;
+        }
+        
+        .regbox{
+
+            width: 15em;
+            height: 35%;
+            margin: auto;
+            margin-top: 20%;
+            
+            border: 2px solid black;
+
+            .name{
+                max-width: 90%;
+                border-radius: 5px;
+                border: 1px solid black;
+                margin-bottom: 0.5em;
+            }
+
+            .sub{
+                margin-bottom: 0.3em;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+        }
+
+        footer{
+            position: absolute;
+            width: 100%;
+            height: 5%;
+            bottom: 0;
+
+            .footerbox{
+                position: inherit;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+        }
+
+    }
+}

@@ -9,6 +9,7 @@
 <body>
 
     <?php
+
     require '../dat/dbh.php';
     require '../keys/key_pair.php';
 
