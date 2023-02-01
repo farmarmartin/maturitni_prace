@@ -8,6 +8,8 @@
 </head>
 <body>
     <form action="sign.php" method="POST">
+        <input type="text" name="name" placeholder="Your full name">
+        <br>
         <textarea id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign"></textarea>
         <br>
         <textarea id="private_key" name="private_key" rows="6" cols="15" placeholder="insert your private key"></textarea>

@@ -1,37 +1,42 @@
 <?php
-require('../dat/dbh.php');
+class Verify{
 
-$data = $_POST['to_validate'];
+    public $data, $data_parts, $signature, $public_key, $decrypted_data, $name;
+    public function __construct()
+    {
+        require('../dat/dbh.php');
 
-$data_parts = explode('|', $data);
-$signature = $data_parts[1];
+        $this->data = $_POST['to_validate'];
+        $this->data_parts = explode('|', $this->data);
+        $this->signature = $this->data_parts[1];
+        $this->name = $this->data_parts[2];
+        $this->public_key = '';
+        $this->decrypted_data = '';
 
+        $sql = "SELECT public_key FROM user_details WHERE full_name =('$this->name');"; # SQL příkaz pro načtení veřejného klíče
+        $result = mysqli_query($connect, $sql);
 
-$sql = "SELECT public_key FROM user_details WHERE full_name =('$data_parts[2]');"; # SQL příkaz pro načtení veřejného klíče
-$result = mysqli_query($connect, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $this->public_key = $row['public_key'];
+        }
+    }
 
-while($row = mysqli_fetch_assoc($result)){
-    $public_key = $row['public_key'];
+    public function decrypt(){
+        openssl_public_decrypt(hex2bin($this->signature), $this->decrypted_data, $this->public_key);
+
+        return $this;
+    }
+
+    public function isValid(){
+        if ($this->decrypted_data ==  hash('sha256', $this->data_parts[0], false)){
+            echo "Message is legitimate.";
+        }else{
+            echo "Document has been changed.";
+        }
+        return $this;
+    }
 }
-$signature_bin = hex2bin($signature);
 
-openssl_public_decrypt($signature_bin, $decrypted_data, '-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAovpXsoKgKICN+sUhFolw
-K8ttgGAYDesSCY9yr2IXzbT9vnrUQezwgQndx2JrDdlsdesRL9mzXet1mKcq0rdr
-g9Uqa6oafy1nHjJh9r/UyOAaZE2iO0J+ilG7aOiL1FpFUW7xsgWHnDNwFFPmuK2T
-WqwVZ28RG9kFCv5sqjUix0vn0VWythHn5/3FjOVmUv4Bnr06JW4eQmRDwnwDdHPZ
-V32WldGUi4wWmdAzvsHdLo7GtZfIxbD5REXbokxGTitzFbPdPxzWIy0NqH0FgTh/
-u5hSqQ2Ua9nnrxOPX5I6Yqb/u5OhqcUDMOk8zUpg5LSUXtpmeQ0TeKSkfderidpq
-0wIDAQAB
------END PUBLIC KEY-----
-');
-
-if ($decrypted_data ===  $data_parts[0]){
-    echo "ok, message is legitimate.";
-}else{
-    echo "something went wrong :(";
-}
-
-
+$valid = (new Verify)->decrypt()->isValid();
 
 
