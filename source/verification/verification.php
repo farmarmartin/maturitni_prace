@@ -1,19 +1,19 @@
 <?php
 class Verify{
 
-    public $data, $data_parts, $signature, $public_key, $decrypted_data, $name;
+    public $data, $data_parts, $signature, $public_key, $decrypted_data, $id;
     public function __construct()
     {
         require('../dat/dbh.php');
 
         $this->data = $_POST['to_validate'];
         $this->data_parts = explode('|', $this->data);
-        $this->signature = $this->data_parts[1];
-        $this->name = $this->data_parts[2];
+        $this->id = $this->data_parts[1];
+        $this->signature = $this->data_parts[2];
         $this->public_key = '';
         $this->decrypted_data = '';
 
-        $sql = "SELECT public_key FROM user_details WHERE full_name =('$this->name');"; # SQL příkaz pro načtení veřejného klíče
+        $sql = "SELECT public_key FROM user_details WHERE id =('$this->id');"; # SQL příkaz pro načtení veřejného klíče
         $result = mysqli_query($connect, $sql);
 
         while ($row = mysqli_fetch_assoc($result)) {

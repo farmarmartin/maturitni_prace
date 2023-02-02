@@ -14,19 +14,28 @@
     require '../keys/key_pair.php';
 
     $user = $_POST['name'];
+    $identifier = random_int(10000000, 99999999);
+    $id = '|'.$identifier.'|';
     $keys = (new Keys)->getKeys();
 
-    $SQL = "INSERT INTO user_details (full_name, public_key) VALUES ('$user', '$keys->public_key');";
-    mysqli_query($connect, $SQL);
-    
-    if (!$connect){
-        echo "could not connect to database";
-    }
-    mysqli_close($connect);
-    
+    $SQL = "INSERT INTO user_details (id, full_name, public_key) VALUES ($identifier, '$user','$keys->public_key');";
+    //mysqli_query($connect, $SQL);
 
-    echo "<textarea rows='29' cols='60'>".$keys->private_key."</textarea>";
-    echo "<br><textarea rows='10' cols='60'>".$keys->public_key."</textarea>";
+
+    if (mysqli_connect_errno()) {
+        echo "Connect failed";
+        exit();
+    }
+    
+    if (!mysqli_query($connect, $SQL)) {
+        printf("Errorcode: %d\n", mysqli_errno($connect));
+        header('Location: ' . '../authorization/register.html');
+    }
+
+    mysqli_close($connect);
+
+
+    echo "<textarea rows='29' cols='60'>".$id.$keys->private_key."</textarea>";
     ?>
 
     <a href="../signature/index.html">sign</a>

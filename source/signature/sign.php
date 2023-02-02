@@ -6,17 +6,13 @@ date_default_timezone_set('Europe/Prague');
 
 class Signature{
 
-    public $name;
-    public $data;
-    public $private_key_from_input;
-    public $data_hash;
-    public $encrypted_data;
+    public $data, $sig_part, $id, $private_key_from_input, $data_hash, $encrypted_data;
 
     public function __construct(){
-
-        $this->name = $_POST['name'];
         $this->data = $_POST['to_sign'];
-        $this->private_key_from_input = $_POST['private_key'];
+        $this->sig_part = explode('|', $_POST['encryption_resources']);
+        $this->id = $this->sig_part[1];
+        $this->private_key_from_input = $this->sig_part[2];
     }
 
     public function getSignature(){
@@ -26,11 +22,11 @@ class Signature{
     }
 
     public function __toString(){
-        return $this->data . "|" . bin2hex($this->encrypted_data) . "|".$this->name. "|" . date("Y-M-D h:i:s");
+        return $this->data . "|" .$this->id. "|".bin2hex($this->encrypted_data). "|" . date("Y-M-D h:i:s");
     }
 }
 $signature = (new Signature)->getSignature();
-echo $signature;
+echo "<textarea rows='10' cols='60'>".$signature."</textarea>";
 
 
 ?>
