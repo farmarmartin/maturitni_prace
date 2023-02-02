@@ -18,6 +18,12 @@
 
     $SQL = "INSERT INTO user_details (full_name, public_key) VALUES ('$user', '$keys->public_key');";
     mysqli_query($connect, $SQL);
+    
+    if (!$connect){
+        echo "could not connect to database";
+    }
+    mysqli_close($connect);
+    
 
     echo "<textarea rows='29' cols='60'>".$keys->private_key."</textarea>";
     echo "<br><textarea rows='10' cols='60'>".$keys->public_key."</textarea>";
