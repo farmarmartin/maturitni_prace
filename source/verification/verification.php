@@ -19,6 +19,7 @@ class Verify{
         while ($row = mysqli_fetch_assoc($result)) {
             $this->public_key = $row['public_key'];
         }
+        mysqli_close($connect);
     }
 
     public function decrypt(){
