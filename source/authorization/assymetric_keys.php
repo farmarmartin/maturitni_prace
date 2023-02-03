@@ -19,18 +19,9 @@
     $keys = (new Keys)->getKeys();
 
     $SQL = "INSERT INTO user_details (id, full_name, public_key) VALUES ($identifier, '$user','$keys->public_key');";
-    //mysqli_query($connect, $SQL);
+    $db = (new mysqli("localhost", "root", "", "digital_signature"))->sendQuery($SQL);
 
-
-    if (mysqli_connect_errno()) {
-        echo "Connect failed";
-        exit();
-    }
-    
-    if (!mysqli_query($connect, $SQL)) {
-        printf("Errorcode: %d\n", mysqli_errno($connect));
-        header('Location: ' . '../authorization/register.html');
-    }
+    mysqli_query($connect, $SQL);
 
     mysqli_close($connect);
 
