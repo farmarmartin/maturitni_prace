@@ -1,18 +1,17 @@
 html {
   margin: 0 auto;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.884);
 }
-
 html body {
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  color: black;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
-
 html body header {
   position: fixed;
   height: 3em;
@@ -20,39 +19,37 @@ html body header {
   margin-top: 0px;
   background-color: burlywood;
 }
-
 html body .regbox {
-  width: 15em;
+  width: 20em;
   height: 35%;
   margin: auto;
   margin-top: 20%;
-  border: 2px solid black;
+  border: 2px solid rgb(173, 173, 173);
 }
-
-html body .regbox .name {
+html body .regbox form .name {
   max-width: 90%;
   border-radius: 5px;
   border: 1px solid black;
   margin-bottom: 0.5em;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
-
-html body .regbox .sub {
+html body .regbox form .sub {
   margin-bottom: 0.3em;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 }
-
 html body footer {
   position: absolute;
   width: 100%;
   height: 5%;
   bottom: 0;
 }
-
 html body footer .footerbox {
   position: inherit;
   width: 100%;
   height: 100%;
   text-align: center;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

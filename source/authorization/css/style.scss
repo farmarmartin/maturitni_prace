@@ -1,6 +1,7 @@
 html{
     margin: 0 auto;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.884);
 
 
     body{
@@ -11,7 +12,7 @@ html{
         text-align: center;
 
         font-family: 'Courier New', Courier, monospace;
-        color: black;
+        color: rgb(255, 255, 255);
 
         header{
             position: fixed;
@@ -23,26 +24,33 @@ html{
         
         .regbox{
 
-            width: 15em;
+            width: 20em;
             height: 35%;
             margin: auto;
             margin-top: 20%;
             
-            border: 2px solid black;
+            border: 2px solid rgb(173, 173, 173);
 
-            .name{
-                max-width: 90%;
-                border-radius: 5px;
-                border: 1px solid black;
-                margin-bottom: 0.5em;
-            }
-
-            .sub{
-                margin-bottom: 0.3em;
-                border: 1px solid black;
-                border-radius: 5px;
+            form{
+                .name{
+                    max-width: 90%;
+                    border-radius: 5px;
+                    border: 1px solid black;
+                    margin-bottom: 0.5em;
+                    background-color: rgba(255, 255, 255, 0.050);
+                    color: white;
+                }
+    
+                .sub{
+                    margin-bottom: 0.3em;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    background-color: rgba(255, 255, 255, 0.050);
+                    color: white;
+                }
             }
         }
+
 
         footer{
             position: absolute;
