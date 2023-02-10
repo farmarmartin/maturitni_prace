@@ -13,10 +13,10 @@ class Keys{
         $this->public_key = null;
         $this->private_key = null;
         $this->configargs = array(
-            "/opt/lampp/include/openssl/", 
-            'private_key_bits'=> 2048,
+            '/opt/lampp/include/openssl/', 
+            'digest_alg' => 'sha256',
+            'private_key_bits' => 2048,
             'private_key_type' => OPENSSL_KEYTYPE_RSA,
-            'default_md' => "sha256",
         );
     }
 

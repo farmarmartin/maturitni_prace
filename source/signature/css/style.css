@@ -5,37 +5,50 @@ html {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.884);
 }
+
 html body {
-  overflow-y: scroll;
   position: absolute;
   width: 100%;
   height: 100%;
   margin: auto;
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
 }
+
 html body header {
   position: fixed;
-  height: 5%;
+  min-height: 5%;
   width: 100%;
   margin-top: 0px;
   background-color: burlywood;
+  font-size: calc(0.5rem + 0.5vw);
 }
+
 html body .sigbox {
   position: relative;
-  width: 54vw;
-  min-height: 20vh;
-  top: 15vh;
-  left: calc(50% - 27vw);
-  border: 2px solid rgb(173, 173, 173);
-}
-html body .sigbox form {
-  position: inherit;
-  width: 50vw;
+  max-width: 54vw;
   min-height: 20vh;
   margin: auto;
+  margin-top: 15vw;
+  font-size: calc(0.7rem + 0.5vw);
+  border: 2px solid #adadad;
 }
+
+@media (max-width: 700px) {
+  html body .sigbox {
+    max-width: 100vw;
+    min-height: 17vh;
+  }
+}
+
+@media (max-width: 700px) {
+  html body .sigbox form {
+    max-width: 100vw;
+    min-height: 17vh;
+  }
+}
+
 html body .sigbox form .to_sign {
   position: inherit;
   width: 45vw;
@@ -43,7 +56,17 @@ html body .sigbox form .to_sign {
   margin-top: 1vh;
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
+  font-size: calc(0.5rem + 0.5vw);
 }
+
+@media (max-width: 700px) {
+  html body .sigbox form .to_sign {
+    width: 90vw;
+    min-height: 5vh;
+    font-size: calc(0.7rem + 0.5vw);
+  }
+}
+
 html body .sigbox form .encryption_resources {
   position: inherit;
   width: 45vw;
@@ -51,7 +74,17 @@ html body .sigbox form .encryption_resources {
   margin-top: 1vh;
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
+  font-size: calc(0.5rem + 0.5vw);
 }
+
+@media (max-width: 700px) {
+  html body .sigbox form .encryption_resources {
+    width: 90vw;
+    min-height: 5vh;
+    font-size: calc(0.7rem + 0.5vw);
+  }
+}
+
 html body .sigbox form .sub {
   position: inherit;
   width: 10vw;
@@ -62,17 +95,30 @@ html body .sigbox form .sub {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.308);
   color: white;
+  font-size: calc(0.3rem + 1vw);
 }
+
+@media (max-width: 700px) {
+  html body .sigbox form .sub {
+    width: 85vw;
+    min-height: 5vh;
+    font-size: calc(0.7rem + 1vw);
+  }
+}
+
 html body footer {
   position: fixed;
   width: 100vw;
   height: 5vh;
   bottom: 3vh;
 }
+
 html body footer .footerbox {
   position: inherit;
   width: 100vw;
   height: 5vh;
   text-align: center;
   bottom: 3vh;
-}/*# sourceMappingURL=style.css.map */
+  font-size: calc(0.5rem + 0.2vw);
+}
+/*# sourceMappingURL=style.css.map */
