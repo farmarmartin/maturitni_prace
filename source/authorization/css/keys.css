@@ -3,24 +3,17 @@ html {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.884);
 }
-
 html body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: absolute;
   width: 100%;
   height: 100%;
   margin: auto;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(255, 255, 255);
 }
-
 html body header {
   position: fixed;
   min-height: 5vh;
@@ -29,13 +22,11 @@ html body header {
   background-color: burlywood;
   font-size: calc(0.5rem + 0.5vw);
 }
-
 html body main {
   min-width: 100vw;
   height: 90vh;
   margin-top: 10vh;
 }
-
 html body main .key {
   min-width: 43vw;
   height: 42vw;
@@ -43,14 +34,12 @@ html body main .key {
   color: white;
   background-color: rgba(255, 255, 255, 0.05);
 }
-
 html body footer {
   position: fixed;
   width: 100vw;
   height: 5vh;
   bottom: 3vh;
 }
-
 html body footer .footerbox {
   position: inherit;
   width: 100vw;
@@ -58,5 +47,4 @@ html body footer .footerbox {
   text-align: center;
   bottom: 3vh;
   font-size: calc(0.5rem + 0.2vw);
-}
-/*# sourceMappingURL=keys.css.map */
+}/*# sourceMappingURL=keys.css.map */

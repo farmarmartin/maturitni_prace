@@ -6,7 +6,7 @@ class Verify{
     {
         require('../dat/dbh.php');
 
-        $this->data = $_POST['to_validate'];
+        $this->data = $_POST['signed_text'];
         $this->data_parts = explode('|', $this->data);
         $this->id = $this->data_parts[1];
         $this->signature = $this->data_parts[2];
@@ -30,14 +30,13 @@ class Verify{
 
     public function isValid(){
         if ($this->decrypted_data ==  hash('sha256', $this->data_parts[0], false)){
-            echo "Message is legitimate.";
+            echo "<p>Message is legitimate.</p>";
         }else{
-            echo "Document has been changed.";
+            echo "<p>Document has been changed.</p>";
         }
         return $this;
     }
 }
 
 $valid = (new Verify)->decrypt()->isValid();
-
-
+?>
