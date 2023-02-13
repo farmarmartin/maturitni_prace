@@ -23,18 +23,17 @@ html{
             margin-top: 0px;
             background-color: burlywood;
             font-size: calc(0.5rem + 0.5vw);
-
         }
         
         main{
             min-width: 100vw;
-            height: 90vh;
-            margin-top: 10vh;
+            height: 70vh;
+            margin-top: auto;
 
             .key{
-                min-width: 43vw;
-                height: 42vw;
-                font-size: 1.2vw;
+                min-width: 30vw;
+                height: 61vh;
+                font-size: 0.8vw;
                 color: white;
                 background-color: rgba(255, 255, 255, 0.050);
             }
@@ -42,20 +41,15 @@ html{
 
 
         footer{
-            position: fixed;
+            position: relative;
             width: 100vw;
-            height: 5vh;
-            bottom: 3vh;
-
-            .footerbox{
-                position: inherit;
-                width: 100vw;
-                height: 5vh;
-                text-align: center;
-                bottom: 3vh;
-                font-size: calc(0.5rem + 0.2vw);
+            height: 7vh;
+            margin-top: auto;
+            background-color: rgb(35, 34, 54);
+            font-size: calc(0.5rem + 0.2vw);
+            p{
+                margin: auto;
             }
-
         }
 
     }

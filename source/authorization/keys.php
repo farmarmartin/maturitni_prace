@@ -31,11 +31,8 @@
     </main>
 
     <footer>
-        <div class="footerbox">
-            <p>Digital signature student project </p>
-            <p>&#169 Martin Job</p>
-        </div>
-        
+        <p>Digital signature student project </p>
+        <p>&#169 Martin Job</p>
     </footer>
 
 

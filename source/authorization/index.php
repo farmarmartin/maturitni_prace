@@ -13,8 +13,8 @@
         <p>Registrujte se pouze pokud jste tak ještě neučinili.</p>
     </header>
 
+
     <main>
-        
         <div class="regbox" id="regbox">
             <h3 class="reg">Register</h3>
             <form action="keys.php" method="POST" id="form">
@@ -25,11 +25,10 @@
         </div>      
     </main>
 
+
     <footer>
-        <div class="footerbox">
-            <p>Digital signature student project </p>
-            <p>&#169 Martin Job</p>
-        </div>
+        <p>Digital signature student project </p>
+        <p>&#169 Martin Job</p>
     </footer>
 </body>
 </html>
