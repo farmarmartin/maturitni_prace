@@ -30,6 +30,7 @@
                     echo "<link rel='stylesheet' href='css/output.css'>";
                 }
             ?>
+            <button id="copy_button" class="copy_button">Zkopírovat</button>
         </div>
     </main>
     <footer>
@@ -37,6 +38,16 @@
         <p>&#169 Martin Job</p>
     </footer>
     
+    <script>
+        var button = document.getElementById('copy_button')
+        var content = document.getElementById('out_text')
 
+        button.addEventListener("click", function(){
+            content.select()
+            content.setSelectionRange(0, 99999)
+
+            navigator.clipboard.writeText(content.value)
+        })
+    </script>
 </body>
 </html>
