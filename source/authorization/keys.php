@@ -26,8 +26,12 @@
             mysqli_query($connect, $SQL);
             mysqli_close($connect);
 
-            echo "<textarea class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>";
+            echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>";
+
+            file_put_contents('private_key.txt', $keys->private_key);
         ?>
+        <button id="copy" class="copy">Zkopírovat</button>
+        <button><a href="private_key.txt" download="private_key.txt" class="download"><i class="fa fa-download"></i> Stáhnout</a></button>
     </main>
 
     <footer>
@@ -35,7 +39,17 @@
         <p>&#169 Martin Job</p>
     </footer>
 
+    <script>
+        var copy = document.getElementById('copy')
+        var content = document.getElementById('key')
 
+        copy.addEventListener("click", function(){
+            content.select()
+            content.setSelectionRange(0, 99999)
+
+            navigator.clipboard.writeText(content.value)
+        })
+    </script>
     
 </body>
 </html>
