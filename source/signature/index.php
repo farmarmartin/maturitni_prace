@@ -23,20 +23,18 @@
     </div>
 
     <div class="output" id="output">
+        <h3>Podepsaný text</h3>
         <?php
         if(isset($_POST['submit'])){
             require 'sign.php';
+            echo "<link rel='stylesheet' href='css/output.css'>";
         }
         ?>
     </div>
 
-    
     <footer>
-        <div class="footerbox">
-            <p>Digital signature student project </p>
-            <p>&#169 Martin Job</p>
-        </div>
-        
+        <p>Digital signature student project </p>
+        <p>&#169 Martin Job</p>
     </footer>
     
 

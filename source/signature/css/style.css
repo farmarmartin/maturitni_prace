@@ -95,16 +95,16 @@ html body .sigbox form .sub {
   }
 }
 html body footer {
-  position: fixed;
+  position: relative;
   width: 100vw;
-  height: 5vh;
-  bottom: 3vh;
+  height: 5%;
+  bottom: 0px;
 }
 html body footer .footerbox {
   position: inherit;
   width: 100vw;
-  height: 5vh;
+  height: 5%;
   text-align: center;
-  bottom: 3vh;
+  bottom: 0px;
   font-size: calc(0.5rem + 0.2vw);
 }/*# sourceMappingURL=style.css.map */
