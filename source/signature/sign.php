@@ -26,7 +26,7 @@ class Signature{
     }
 }
 $signature = (new Signature)->getSignature();
-echo "<textarea class='out_text' rows='10lo' cols='60'>".$signature."</textarea>";
+echo "<textarea id='out_text' class='out_text' rows='10lo' cols='60'>".$signature."</textarea>";
 
 
 ?>
