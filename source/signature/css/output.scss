@@ -1,7 +1,7 @@
 .output{
     position: relative;
     max-width: 54vw;
-    min-height: 25vh;
+    min-height: 35vh;
     margin: auto;            
     margin-top: 2vh;
     font-size: calc(0.7rem + 0.5vw);
@@ -15,8 +15,9 @@
 
     .out_text{
         width: 52vw;
+        height: 15vh;
         color: white;
-        margin-top: 1vh;
+        margin-top: auto;
         background-color: rgba(255, 255, 255, 0.050);
         font-size: calc(0.7rem + 0.5vw);
     }

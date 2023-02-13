@@ -11,27 +11,27 @@
     <header>
         <p>Zde můžete digitálně podepsat text</p>
     </header>
+    <main>
+        <div class="sigbox">
+            <h3>Lets sign some text!</h3>
+            <form method="POST">
+                <textarea class="to_sign" id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign" required></textarea>
+                <br>
+                <textarea class="encryption_resources" id="encryption_resources" name="encryption_resources" rows="6" cols="15" placeholder="insert your private key" required></textarea>
+                <input class="sub" type="submit" name="submit" value="sign">
+            </form>
+        </div>
 
-    <div class="sigbox">
-        <h3>Lets sign some text!</h3>
-        <form method="POST">
-            <textarea class="to_sign" id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign" required></textarea>
-            <br>
-            <textarea class="encryption_resources" id="encryption_resources" name="encryption_resources" rows="6" cols="15" placeholder="insert your private key" required></textarea>
-            <input class="sub" type="submit" name="submit" value="sign">
-        </form>
-    </div>
-
-    <div class="output" id="output">
-        <h3>Podepsaný text</h3>
-        <?php
-        if(isset($_POST['submit'])){
-            require 'sign.php';
-            echo "<link rel='stylesheet' href='css/output.css'>";
-        }
-        ?>
-    </div>
-
+        <div class="output" id="output">
+            <p>Podepsaný text</p>
+            <?php
+                if(isset($_POST['submit'])){
+                    require 'sign.php';
+                    echo "<link rel='stylesheet' href='css/output.css'>";
+                }
+            ?>
+        </div>
+    </main>
     <footer>
         <p>Digital signature student project </p>
         <p>&#169 Martin Job</p>

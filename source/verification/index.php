@@ -12,22 +12,24 @@
         <p>header</p>
     </header>
 
-
-    <div class="verifybox" id="verifybox">
-        <h3 class="reg">Ověření pravosti</h3>
-        <form method="POST" id="form">
-            <textarea class="signed_text" id="signed_text" name="signed_text" rows="15" cols="60" placeholder="podepsaný text" required></textarea>
-            <br>
-            <input class="sub" type="submit" value="zkontrolovat" name="submit">
-        </form>
-    </div>
-    <div class="output">
-        <?php
-        if(isset($_POST['submit'])){
-            require('verification.php');
-        }
-        ?>
-    </div>   
+    <main>
+        <div class="verifybox" id="verifybox">
+            <h3 class="reg">Ověření pravosti</h3>
+            <form method="POST" id="form">
+                <textarea class="signed_text" id="signed_text" name="signed_text" rows="15" cols="60" placeholder="podepsaný text" required></textarea>
+                <br>
+                <input class="sub" type="submit" value="zkontrolovat" name="submit">
+            </form>
+        </div>
+        <div class="output">
+            <?php
+            if(isset($_POST['submit'])){
+                require('verification.php');
+            }
+            ?>
+        </div>   
+    </main>
+    
 
 
     <footer>
