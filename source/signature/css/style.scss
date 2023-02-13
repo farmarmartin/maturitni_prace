@@ -103,18 +103,18 @@ html{
         }
 
         footer{
-            position: fixed;
+            position: relative;
             width: 100vw;
-            height: 5vh;
-            bottom: 3vh;
+            height: 5%;
+            bottom: 0px;
             
             
             .footerbox{
                 position: inherit;
                 width: 100vw;
-                height: 5vh;
+                height: 5%;
                 text-align: center;
-                bottom: 3vh;
+                bottom: 0px;
                 font-size: calc(0.5rem + 0.2vw);
             }
         }
