@@ -10,7 +10,12 @@
 </head>
 <body>
     <header>
-        <p>Registrujte se pouze pokud jste tak ještě neučinili.</p>
+        <div class="topnav">
+            <a class="active" href="#home">Registrace</a>
+            <a href="#news">Podepsat</a>
+            <a href="#contact">Ověřit</a>
+            <a href="#about">Návod</a>
+        </div> 
     </header>
 
 
