@@ -23,7 +23,7 @@
                 <textarea class="to_sign" id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign" required></textarea>
                 <br>
                 <textarea class="encryption_resources" id="encryption_resources" name="encryption_resources" rows="6" cols="15" placeholder="insert your private key" required></textarea>
-                <input class="sub" type="submit" name="submit" value="sign">
+                <input id="sub" class="sub" type="submit" name="submit" value="sign">
             </form>
         </div>
 
@@ -53,6 +53,13 @@
 
             navigator.clipboard.writeText(content.value)
         })
+
+        var submitform = document.getElementById("sub")
+
+        submitform.addEventListener("click", function(){
+            document.getElementById("copy_button").style.visibility = "visible"
+        })
+
     </script>
 </body>
 </html>
