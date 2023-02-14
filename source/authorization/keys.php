@@ -28,7 +28,7 @@
 
             echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>";
 
-            file_put_contents('private_key.txt', $keys->private_key);
+            file_put_contents('private_key.txt', $id.$keys->private_key);
         ?>
         <button id="copy" class="copy">Zkopírovat</button>
         <button><a href="private_key.txt" download="private_key.txt" class="download"><i class="fa fa-download"></i> Stáhnout</a></button>
