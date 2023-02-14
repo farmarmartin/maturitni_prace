@@ -9,7 +9,12 @@
 </head>
 <body>
     <header>
-        <p>Zde můžete digitálně podepsat text</p>
+        <div class="nav">
+            <a href="../authorization/index.php">Registrace</a>
+            <a href="../signature/index.php">Podepsat</a>
+            <a href="../verification/index.php">Ověřit</a>
+            <a href="">Návod</a>
+        </div> 
     </header>
     <main>
         <div class="sigbox">

@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <div class="topnav">
-            <a class="active" href="#home">Registrace</a>
-            <a href="#news">Podepsat</a>
-            <a href="#contact">Ověřit</a>
-            <a href="#about">Návod</a>
+        <div class="nav">
+            <a href="../authorization/index.php">Registrace</a>
+            <a href="../signature/index.php">Podepsat</a>
+            <a href="../verification/index.php">Ověřit</a>
+            <a href="">Návod</a>
         </div> 
     </header>
 
