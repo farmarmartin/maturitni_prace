@@ -5,14 +5,16 @@
   margin: auto;
   margin-top: 2vh;
   font-size: calc(0.7rem + 0.5vw);
-  border: 2px solid rgb(173, 173, 173);
+  border: 2px solid #adadad;
 }
+
 @media (max-width: 700px) {
   .output {
     max-width: 100vw;
     min-height: 17vh;
   }
 }
+
 .output .out_text {
   width: 52vw;
   height: 15vh;
@@ -20,4 +22,5 @@
   margin-top: auto;
   background-color: rgba(255, 255, 255, 0.05);
   font-size: calc(0.7rem + 0.5vw);
-}/*# sourceMappingURL=output.css.map */
+}
+/*# sourceMappingURL=output.css.map */

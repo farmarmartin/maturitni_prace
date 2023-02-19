@@ -13,7 +13,7 @@ class Keys{
         $this->public_key = null;
         $this->private_key = null;
         $this->configargs = array(
-            'config' => '/opt/lampp/include/openssl/',      /*D:/xampp/php/extras/openssl/openssl.cnf',/*/ 
+            'config' => 'D:/xampp/php/extras/openssl/openssl.cnf',      /*/opt/lampp/include/openssl/*/ 
             'digest_alg' => 'sha256',
             'private_key_bits' => 2048,
             'private_key_type' => OPENSSL_KEYTYPE_RSA,

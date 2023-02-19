@@ -10,10 +10,10 @@
 <body>
     <header>
         <div class="nav">
-            <a href="../authorization/index.php">Registrace</a>
+            <a href="../registration/index.php">Registrace</a>
             <a href="../signature/index.php">Podepsat</a>
             <a href="../verification/index.php">Ověřit</a>
-            <a href="">Návod</a>
+            <a href="../about/index.html">Návod</a>
         </div>
     </header>
 
