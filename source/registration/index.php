@@ -22,7 +22,7 @@
     <main>
         <div class="regbox" id="regbox">
             <h3 class="reg">Registrace</h3>
-            <form action="keys.php" method="POST" id="form">
+            <form action="?operation=register_key" method="POST" id="form">
                 <input class="name" id="name"  type="text" name="name" placeholder="Full name" required>
                 <br>
                 <input id="sub" class="sub" type="submit" name="submit" value="submit">

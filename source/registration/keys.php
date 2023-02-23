@@ -57,7 +57,7 @@
         })
 
         download.addEventListener("click", function(){
-            window.location.replace("../signature/")
+            window.location.replace("?operation=sign")
         })
 
     </script>
