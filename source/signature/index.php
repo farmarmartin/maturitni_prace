@@ -10,10 +10,10 @@
 <body>
     <header>
         <div class="nav">
-            <a href="../registration/index.php">Registrace</a>
-            <a href="../signature/index.php">Podepsat</a>
-            <a href="../verification/index.php">Ověřit</a>
-            <a href="../about/index.html">Návod</a>
+            <a href="?operation=register">Registrace</a>
+            <a href="?operation=sign">Podepsat</a>
+            <a href="?operation=verify">Ověřit</a>
+            <a href="?operation=help">Návod</a>
         </div> 
     </header>
     <main>
@@ -32,7 +32,7 @@
             <?php
                 if(isset($_POST['submit'])){
                     require 'sign.php';
-                    echo "<link rel='stylesheet' href='css/output.css'>";
+                    echo "<link rel='stylesheet' href='../signature/css/output.css'>";
                 }
             ?>
         </div>
