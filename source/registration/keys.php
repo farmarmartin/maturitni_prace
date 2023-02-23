@@ -21,7 +21,6 @@
         <?php
             require '../dat/dbh.php';
             require '../keys/key_pair.php';
-            require 'clearFile.php';
 
             $user = $_POST['name'];
             $identifier = random_int(10000000, 99999999);
@@ -62,7 +61,7 @@
         })
 
     </script>
-    
+
 </body>
 </html>
 

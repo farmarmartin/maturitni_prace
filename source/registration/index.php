@@ -29,9 +29,7 @@
             </form>
         </div>      
     </main>
-    <?php
-        require 'clearFile.php';
-    ?>
+
 
     <footer>
         <p>Digital signature student project </p>
