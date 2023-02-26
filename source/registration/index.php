@@ -10,12 +10,17 @@
 </head>
 <body>
     <header>
-        <div class="nav">
-            <a href="?operation=register">Registrace</a>
-            <a href="?operation=sign">Podepsat</a>
-            <a href="?operation=verify">Ověřit</a>
-            <a href="?operation=help">Návod</a>
-        </div> 
+    <div class="nav" id="nav">
+            <div class="link"><a href="?operation=register">Registrace</a></div>
+            <div class="link"><a href="?operation=sign">Podepsat</a></div>
+            <div class="link"><a href="?operation=verify">Ověřit</a></div>
+            <div class="link"><a href="?operation=help">Návod</a></div>
+        </div>
+        <div class="menubtn" id="menubtn">
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+        </div>
     </header>
 
 
