@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>maturitni prace</h1>
-    
+    <?php
+    header('Location: source/service/?operation=help');
+    ?>
 </body>
 </html>

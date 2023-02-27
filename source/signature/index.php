@@ -23,7 +23,7 @@
     </header>
     <main>
         <div class="sigbox">
-            <h3>Pojďme podepsat nějaký text!</h3>
+            <p>Pojďme podepsat nějaký text!</p>
             <form method="POST">
                 <textarea class="to_sign" id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign" required></textarea>
                 <br>
