@@ -2,7 +2,6 @@ let menu = document.getElementById('menubtn')
 let nav = document.getElementById('nav')
 let header = document.getElementsByTagName('header')[0]
 let link = document.getElementById('link')
-let footer = document.getElementById('footer')
 let isActive = 1
 
 menu.addEventListener('click', function(){
@@ -13,6 +12,7 @@ menu.addEventListener('click', function(){
         menu.style.order = '-1'
         header.style.opacity = '40%'
         document.getElementsByTagName('main')[0].style.filter = 'blur(1rem)'
+
     }else{
         nav.style.maxHeight = ''
         nav.style.display = ''
