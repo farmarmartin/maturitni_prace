@@ -27,7 +27,7 @@
             <form method="POST">
                 <textarea class="to_sign" id="to_sign" name="to_sign" rows="4" cols="30" placeholder="text you want to sign" required></textarea>
                 <br>
-                <textarea class="encryption_resources" id="encryption_resources" name="encryption_resources" rows="6" cols="15" placeholder="insert your private key"></textarea>
+                <textarea class="encryption_resources" id="encryption_resources" name="encryption_resources" rows="6" cols="15" minlength="1700" placeholder="insert your private key"></textarea>
                 
                 <input id="sub" class="sub" type="submit" name="submit" value="sign">
             </form>
