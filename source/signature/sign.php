@@ -13,27 +13,27 @@ class Signature{
         $this->sig_part = explode('|', $_POST['encryption_resources']);
         $this->id = $this->sig_part[1];
         $this->private_key_txt = $this->sig_part[2];
-
-        /*if($_POST['encryption_resources'] == ''){
-            $f = fopen($_POST['file'], 'r');
-            var_dump($f);
-        }*/
     }
 
+    //funkce pro získání podpisu
     public function getSignature(){
-        $this->data_hash = hash('sha256', $this->data, false);
-        openssl_private_encrypt($this->data_hash, $this->encrypted_data, $this->private_key_txt);
+        $this->data_hash = hash('sha256', $this->data, false); //vytvoří hash z textu, který chceme podepisovat a uloží jej do proměnné
+        openssl_private_encrypt($this->data_hash, $this->encrypted_data, $this->private_key_txt); //zašifruje hodnotu výše zmiňovaného hashe pomocí privátního klíče a uloží jej do proměnné $encrypted_data
         return $this;
     }
-
+    
+    //sestaví echovatelnou verzi podpisu
     public function __toString(){
+                                            //převede tělo podpisu do hexadecimálního tvaru tudíš není problém s kódováním
         return $this->data . "|" .$this->id. "|".bin2hex($this->encrypted_data). "|" . date("Y-M-D h:i:s");
     }
 }
+//vytvoření objektu
 $signature = (new Signature)->getSignature();
+
+//generování html
 echo "<p>Podepsaný text</p>";
-echo "<textarea id='out_text' class='out_text' rows='10' cols='60'>".$signature."</textarea>";
-echo "<button id='copy_button' class='copy_button'>Zkopírovat</button>";
-
-
+echo "<label for='out_text'></label>";
+echo "<textarea role='podepsaný text' id='out_text' class='out_text' name='out_text' rows='10' cols='60'>".$signature."</textarea>";
+echo "<button id='copy_button' class='copy_button' onclick='copy()'>Zkopírovat</button>";
 ?>
