@@ -9,13 +9,13 @@
 </head>
 <body>
     <header>
-        <div class="nav" id="nav">
-            <div class="link"><a href="?operation=register">Registrace</a></div>
-            <div class="link"><a href="?operation=sign">Podepsat</a></div>
-            <div class="link"><a href="?operation=verify">Ověřit</a></div>
-            <div class="link"><a href="?operation=help">Návod</a></div>
+        <div role="navigace" class="nav" id="nav">
+            <div class="link" onclick="window.location.href = '?operation=register'">Registrace</div>
+            <div class="link" onclick="window.location.href = '?operation=sign'">Podepsat</div>
+            <div class="link" onclick="window.location.href = '?operation=verify'">Ověřit</div>
+            <div class="link" onclick="window.location.href = '?operation=help'">Návod</div>
         </div>
-        <div class="menubtn" id="menubtn">
+        <div role="menu" class="menubtn" id="menubtn">
             <div class="stick"></div>
             <div class="stick"></div>
             <div class="stick"></div>
@@ -26,17 +26,17 @@
         <h1>Návod ke správnému použití této webové stránky</h1>
         <br>
         <ol>
-            <li>Zaregistrujte se na stránce <a href="?operation=register">registrace</a></li>
+            <li>Zaregistrujte se na stránce <a href="?operation=register">registrace.</a></li>
             <br>
-            <li>Stáhněte si svůj privátní klíč kliknutím na tlačítko stáhnout. Pokud si přejete ihned podepisovat, můžete si klíč zkopírovat kliknutím na tlačítko zkopírovat</li>
+            <li>Stáhněte si svůj privátní klíč kliknutím na tlačítko stáhnout. Pokud si přejete ihned podepisovat, můžete si klíč zkopírovat kliknutím na tlačítko zkopírovat.</li>
             <br>
-            <li>V horní části obrazovky klikněte na link <a href="?operation=sign">Podepsat</a></li>
+            <li>V horní části obrazovky klikněte na link <a href="?operation=sign">Podepsat.</a></li>
             <br>
-            <li>Správně vyplňte obě políčka ve formuláři a poté potvrďte</li>
+            <li>Správně vyplňte obě políčka ve formuláři a poté potvrďte.</li>
             <br>
-            <li>Podepsaný text zkopírujte</li>
+            <li>Podepsaný text zkopírujte.</li>
             <br>
-            <li>Ověření, zda text byl změněn provádí na stránce <a href="?operation=verify">Ověření</a>, kde se pouze vloží podepsaný text a následně potvrdíte</li>
+            <li>Ověření, zda text byl změněn se provádí na stránce <a href="?operation=verify">Ověření</a>, kde se pouze vloží podepsaný text a následně potvrdíte kliknutím na tlačítko.</li>
         </ol>
    </main>
 

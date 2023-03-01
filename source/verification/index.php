@@ -9,13 +9,13 @@
 </head>
 <body>
     <header>
-    <div class="nav" id="nav">
-            <div class="link"><a href="?operation=register">Registrace</a></div>
-            <div class="link"><a href="?operation=sign">Podepsat</a></div>
-            <div class="link"><a href="?operation=verify">Ověřit</a></div>
-            <div class="link"><a href="?operation=help">Návod</a></div>
+        <div role="navigace" class="nav" id="nav">
+            <div class="link" onclick="window.location.href = '?operation=register'">Registrace</div>
+            <div class="link" onclick="window.location.href = '?operation=sign'">Podepsat</div>
+            <div class="link" onclick="window.location.href = '?operation=verify'">Ověřit</div>
+            <div class="link" onclick="window.location.href = '?operation=help'">Návod</div>
         </div>
-        <div class="menubtn" id="menubtn">
+        <div role="menu" class="menubtn" id="menubtn">
             <div class="stick"></div>
             <div class="stick"></div>
             <div class="stick"></div>
@@ -23,9 +23,10 @@
     </header>
 
     <main>
+        <h2>Ověření pravosti</h2>
         <div class="verifybox" id="verifybox">
-            <h3 class="reg">Ověření pravosti</h3>
             <form method="POST" id="form">
+                <label for="signed_text">text k prověření</label>
                 <textarea class="signed_text" id="signed_text" name="signed_text" rows="15" cols="60" placeholder="podepsaný text" required></textarea>
                 <br>
                 <input class="sub" type="submit" value="zkontrolovat" name="submit">
@@ -33,8 +34,10 @@
         </div>
         <div class="output">
             <?php
+            ini_set('display_errors', 0);
+            
             if(isset($_POST['submit'])){
-                require('verification.php');
+                require('verification.php'); //import scriptu pro ověření podpisu
             }
             ?>
         </div>   

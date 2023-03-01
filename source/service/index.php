@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>digitální podpis</title>
 </head>
 <body>
    <?php
-   $url = $_SERVER["REQUEST_URI"];
+   require '../registration/clearFile.php';
+   $url = $_SERVER["REQUEST_URI"]; //uložení URL do proměnné
 
-   $operation = filter_input(INPUT_GET, 'operation');
-   switch($operation){
+   $operation = filter_input(INPUT_GET, 'operation'); //filtrování obsahu URL za 'operation' částí
+   switch($operation){  //přesměrovávání na jednotlivé stránky
       case 'sign':
          require '../signature/index.php';
          echo "<link rel='stylesheet' href='../signature/css/style.css'>";
