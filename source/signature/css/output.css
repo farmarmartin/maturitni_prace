@@ -5,31 +5,36 @@
   margin: auto;
   margin-top: 2vh;
   font-size: calc(0.7rem + 0.5vw);
-  background-color: rgb(23, 23, 23);
-  border: 2px solid rgb(173, 173, 173);
+  background-color: #171717;
+  border: 2px solid #adadad;
 }
+
 @media (max-width: 700px) {
   .output {
     min-width: 100vw;
     min-height: 17vh;
   }
 }
+
 .output p {
   padding: 5px;
 }
+
 .output .out_text {
   width: 52vw;
   height: 15vh;
   color: white;
   margin-top: auto;
-  background-color: rgb(32, 32, 32);
+  background-color: #202020;
   font-size: calc(0.7rem + 0.5vw);
 }
+
 @media (max-width: 700px) {
   .output .out_text {
     width: 90%;
   }
 }
+
 .output .copy_button {
   width: 15vw;
   margin-bottom: 0.3em;
@@ -39,10 +44,12 @@
   color: white;
   font-size: calc(0.5rem + 0.5vw);
 }
+
 @media (max-width: 700px) {
   .output .copy_button {
     width: 70vw;
     min-height: 5vh;
     font-size: calc(1rem + 0.5vw);
   }
-}/*# sourceMappingURL=output.css.map */
+}
+/*# sourceMappingURL=output.css.map */

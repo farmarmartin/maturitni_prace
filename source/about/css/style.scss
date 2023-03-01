@@ -16,8 +16,8 @@ html{
         height: 100%;
         margin: auto;
         text-align: center;
-
         font-family: 'Courier New', Courier, monospace;
+        letter-spacing: 1px;
         color: rgb(255, 255, 255);
         background: rgb(22,0,74);
         background: linear-gradient(180deg, rgb(31, 0, 103) 20%, rgba(97,35,35,1) 100%);
@@ -82,8 +82,11 @@ html{
                     border-left: 1px solid black;
                     border-right: 1px solid black;
                     background: $btnColor;
+                    color: black;
                     z-index: 3;
                     margin: 3vw;
+                    justify-content: center;
+                    align-items: center;
                     @media screen and (max-width: 700px) {
                         border-left: unset;
                         border-right: unset;
@@ -96,19 +99,10 @@ html{
                             from {background-color: $btnColor;}
                             to {background-color: rgb(31, 0, 103);}
                           }
+                        color: white;
                         animation-name: colorfade;
                         animation-duration: 0.7s;
                         animation-fill-mode: forwards;
-                        a{
-                            color: white;
-                        }
-                    }
-                    
-                    a{
-                        margin-top: auto;
-                        text-decoration: none;
-                        color: black;
-                        z-index: inherit;
                     }
 
                 }
@@ -119,6 +113,7 @@ html{
             h1{
                 font-size: calc(1vw + 0.7rem);
             }
+
             ol{
                 position: relative;
                 max-width: 85vw;
@@ -134,6 +129,7 @@ html{
                 
                 li{
                     max-width: 95vw;
+                    font-size: calc(0.7rem + 0.3vw);
                     a{
                         color: rgb(0, 110, 127);
                         background-color: white;
@@ -141,6 +137,7 @@ html{
                 }
             }
         }
+    }
 
 
         footer{
@@ -157,4 +154,3 @@ html{
         }
 
     }
-}
