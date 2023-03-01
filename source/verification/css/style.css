@@ -179,7 +179,6 @@ html body main .verifybox {
   min-height: 15vh;
   margin: auto;
   margin-top: auto;
-  padding: 2vh;
   font-size: calc(0.5rem + 0.5vw);
   background-color: #171717;
   border: 2px solid #adadad;
@@ -187,7 +186,7 @@ html body main .verifybox {
 
 @media (max-width: 700px) {
   html body main .verifybox {
-    width: 95vw;
+    width: 90vw;
     min-height: 17vh;
   }
 }
@@ -209,7 +208,7 @@ html body main .verifybox form {
 
 html body main .verifybox form .signed_text {
   position: inherit;
-  width: 100%;
+  width: 95%;
   height: 10vh;
   margin-top: 1vh;
   background-color: #202020;

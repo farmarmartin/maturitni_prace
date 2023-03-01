@@ -8,6 +8,7 @@ class Signature{
 
     public $data, $sig_part, $id, $private_key_txt, $data_hash, $encrypted_data;
 
+    // nastaví základní hodnoty proměnným
     public function __construct(){
         $this->data = $_POST['to_sign'];
         $this->sig_part = explode('|', $_POST['encryption_resources']);

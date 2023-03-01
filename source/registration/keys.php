@@ -43,8 +43,11 @@
 
             file_put_contents('private_key.txt', $id.$keys->private_key); //uložení id a klíče do souboru pro stažení
         ?>
-        <button id="copy" class="copy">Zkopírovat</button>
-        <button><a href="private_key.txt" download="private_key.txt" class="download" id="download"><i class="fa fa-download"></i> Stáhnout</a></button>
+        <div class="buttons">
+            <button id="copy" class="copy">Zkopírovat</button>
+            <button><a href="private_key.txt" download="private_key.txt" class="download" id="download"><i class="fa fa-download"></i> Stáhnout</a></button>
+        </div>
+        
     </main>
 
     <footer>
