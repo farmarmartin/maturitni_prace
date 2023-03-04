@@ -28,7 +28,12 @@
 
             if(!isset($_POST['name'])){
                 echo "<p>Slouží pouze k registraci</p>";
-                echo "<a href='?operation=register'>Registrujte zde</a>";
+                echo "<a href='?operation=register' style='color: white;'>Registrujte se zde</a>";
+                echo "<style>
+                        button{
+                            display:none;
+                        }
+                    </style>";
             }else{
 
             require '../dat/dbh.php';   //import scriptů
