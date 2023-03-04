@@ -7,3 +7,4 @@ $dbName = "digital_signature";
 
 //připojení do DB
 $connect = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+?>
