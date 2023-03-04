@@ -26,7 +26,7 @@ class Signature{
     //sestaví echovatelnou verzi podpisu
     public function __toString(){
                                             //převede tělo podpisu do hexadecimálního tvaru tudíš není problém s kódováním
-        return $this->data . "|" .$this->id. "|".bin2hex($this->encrypted_data). "|" . date("Y-M-D h:i:s");
+        return $this->data . "|" .$this->id. "|".bin2hex($this->encrypted_data). "|" . date("d/m/Y H:i:s");
     }
 }
 //vytvoření objektu
