@@ -25,11 +25,15 @@
     <main>
         <?php
             ini_set('display_errors', 0);
-            
+
+            if(!isset($_POST['name'])){
+                echo "<p>Slouží pouze k registraci</p>";
+                echo "<a href='?operation=register'>Registrujte zde</a>";
+            }else{
+
             require '../dat/dbh.php';   //import scriptů
             require '../keys/key_pair.php';
 
-            
             $user = $_POST['name']; // uložení dat z formuláře do proměnné
             $identifier = random_int(10000000, 99999999); //generování random id
             $id = '|'.$identifier.'|'; // připravení id pro použití ve výstupu
@@ -42,6 +46,7 @@
             echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>"; //generování výstupu, ve kterém bude zobrazen string obsahující id a privátní klíč
 
             file_put_contents('private_key.txt', $id.$keys->private_key); //uložení id a klíče do souboru pro stažení
+        }
         ?>
         <div class="buttons">
             <button id="copy" class="copy">Zkopírovat</button>
