@@ -29,11 +29,7 @@
             if(!isset($_POST['name'])){
                 echo "<p>Slouží pouze k registraci</p>";
                 echo "<a href='?operation=register' style='color: white;'>Registrujte se zde</a>";
-                echo "<style>
-                        button{
-                            display:none;
-                        }
-                    </style>";
+                echo "<style>button{display:none;}</style>";
             }else{
 
             require '../dat/dbh.php';   //import scriptů
@@ -43,15 +39,22 @@
             $identifier = random_int(10000000, 99999999); //generování random id
             $id = '|'.$identifier.'|'; // připravení id pro použití ve výstupu
             $keys = (new Keys)->getKeys(); //vygenerování páru klíčů
+            if($keys == false){
+                echo "Špatná cesta k OpenSSL";
+                echo "<style>button{display:none;}</style>";
+            }else{
+                $SQL = "INSERT INTO user_details (id, full_name, public_key) VALUES ($identifier, '$user','$keys->public_key');"; // sql dotaz pro zaznamenání dat do DB
+                mysqli_query($connect, $SQL); //odeslání dotazu do DB
+                mysqli_close($connect); //uzavření spojení s DB
 
-            $SQL = "INSERT INTO user_details (id, full_name, public_key) VALUES ($identifier, '$user','$keys->public_key');"; // sql dotaz pro zaznamenání dat do DB
-            mysqli_query($connect, $SQL); //odeslání dotazu do DB
-            mysqli_close($connect); //uzavření spojení s DB
+                echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>"; //generování výstupu, ve kterém bude zobrazen string obsahující id a privátní klíč
 
-            echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>"; //generování výstupu, ve kterém bude zobrazen string obsahující id a privátní klíč
-
-            file_put_contents('private_key.txt', $id.$keys->private_key); //uložení id a klíče do souboru pro stažení
+                file_put_contents('private_key.txt', $id.$keys->private_key); //uložení id a klíče do souboru pro stažení
+            }
         }
+            
+
+            
         ?>
         <div class="buttons">
             <button id="copy" class="copy">Zkopírovat</button>

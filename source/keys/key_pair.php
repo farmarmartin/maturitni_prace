@@ -18,8 +18,12 @@ class Keys{
     //funkce generující samotné klíče
     public function getKeys(){
         $this->keypair = openssl_pkey_new($this->configargs);
-        $this->public_key = openssl_pkey_get_details($this->keypair)['key'];
-        openssl_pkey_export($this->keypair, $this->private_key, NULL,$this->configargs); //převod asymetrického klíče na string a uložení do proměnné $private_key
-        return $this;
+        if($this->keypair !== false){
+            $this->public_key = openssl_pkey_get_details($this->keypair)['key'];
+            openssl_pkey_export($this->keypair, $this->private_key, NULL,$this->configargs); //převod asymetrického klíče na string a uložení do proměnné $private_key
+            return $this;
+        }
+        return false;
     }
 }
+?>
