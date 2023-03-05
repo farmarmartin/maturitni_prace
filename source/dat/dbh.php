@@ -6,5 +6,5 @@ $dbPassword = "";
 $dbName = "digital_signature";
 
 //připojení do DB
-$connect = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+$db = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName); //vytvoření objektu třídy mysqli
 ?>

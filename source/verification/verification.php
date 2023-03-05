@@ -18,14 +18,14 @@ class Verify{
         $this->person = '';
 
         $sql = "SELECT public_key, full_name FROM user_details WHERE id =('$this->id');"; // SQL příkaz pro načtení veřejného klíče a podepisovatele
-        $result = mysqli_query($connect, $sql);
+        $result = $db->query($sql);
 
         //uložení dat přijmutých z DB do proměnných
         while ($row = mysqli_fetch_assoc($result)) {
             $this->public_key = $row['public_key'];
             $this->person = $row['full_name'];
         }
-        mysqli_close($connect); //uzavření spojení s DB
+        $db->close(); //uzavření spojení s DB
     }
 
     //funkce rozšifruje hodnotu původního hashe pomocí veřejného klíče a uloží jej do proměnné

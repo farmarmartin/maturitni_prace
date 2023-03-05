@@ -44,8 +44,8 @@
                 echo "<style>button{display:none;}</style>";
             }else{
                 $SQL = "INSERT INTO user_details (id, full_name, public_key) VALUES ($identifier, '$user','$keys->public_key');"; // sql dotaz pro zaznamenání dat do DB
-                mysqli_query($connect, $SQL); //odeslání dotazu do DB
-                mysqli_close($connect); //uzavření spojení s DB
+                $db->query($SQL); //odeslání dotazu do DB
+                $db->close(); //uzavření spojení s DB
 
                 echo "<textarea id='key' class='key' rows='10' cols='60' readonly>".$id.$keys->private_key."</textarea>"; //generování výstupu, ve kterém bude zobrazen string obsahující id a privátní klíč
 
